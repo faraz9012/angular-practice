@@ -1,0 +1,81 @@
+<div class="container py-2">
+    <h3>All Subscribers:</h3>
+    <hr />
+    <div *ngIf="listService.listSubscribers.length > 0; else elseBlock">
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item d-flex justify-content-between align-items-start"
+                *ngFor="let subscriber of listService.listSubscribers; let i=index;">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold">{{ subscriber.name}}
+                        <span class="badge bg-primary rounded-pill">{{i}}</span></div>
+                    {{ subscriber.email}}
+                </div>
+                <div>
+                    <button type="button" class="m-1 btn btn-danger" (click)="onDeleteSubscriber(i)">Delete</button>
+                    <button type="button" class="m-1 btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal"
+                        (click)="onEditSubscriber(i)">Edit</button>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form>
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="editModalLabel">Edit Subscriber</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <strong class="h6">Current Name:</strong>
+                                            <p>{{selectedItem?.name}}</p>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <strong class="h6">Current Email:</strong>
+                                            <p>{{selectedItem?.email}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex align-items-center">
+                                        <div class="col-lg-12">
+                                            <div class="mb-3">
+                                                <label for="subscriberName" class="form-label">Name</label>
+                                                <input type="text" class="form-control" id="subscriberName"
+                                                    aria-describedby="nameHelp" placeholder="John Smith"
+                                                    [(ngModel)]="NewSubscriberName" [ngModelOptions]="{standalone: true}">
+                                                <div id="nameHelp" class="form-text">What would you like to be called?
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="mb-3">
+                                                <label for="subscriberEmail" class="form-label">Email address</label>
+                                                <input type="email" class="form-control" id="subscriberEmail"
+                                                    aria-describedby="emailHelp" placeholder="test@example.com"
+                                                    [(ngModel)]="NewSubscriberEmail" [ngModelOptions]="{standalone: true}">
+                                                <div id="emailHelp" class="form-text">We'll never share your email with
+                                                    anyone else.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary"
+                                    (click)="updateSubscriberInfo()">Save changes</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ol>
+
+    </div>
+    <ng-template #elseBlock>
+        <p class="text-center">No subscribers have been added.</p>
+    </ng-template>
+</div>

@@ -1,0 +1,48 @@
+<!-- Carousel Start -->
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{sliderUrl}}slider1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{{sliderUrl}}slider2.jpg" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- Carousel End -->
+<div class="container py-3">
+    <h3>Become a subscriber</h3>
+    <form>
+        <div class="row d-flex align-items-center">
+            <div class="col-lg-4">
+                <div class="mb-3">
+                    <label for="subscriberName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="subscriberName" aria-describedby="nameHelp"
+                        placeholder="John Smith" [(ngModel)]="subscriberName" [ngModelOptions]="{standalone: true}">
+                    <div id="nameHelp" class="form-text">What would you like to be called?</div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="mb-3">
+                    <label for="subscriberEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="subscriberEmail" aria-describedby="emailHelp"
+                        placeholder="test@example.com" [(ngModel)]="subscriberEmail"
+                        [ngModelOptions]="{standalone: true}">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <button type="submit" class="btn-md btn btn-primary rounded-pill px-5"
+                    (click)="onAddSubscriber()">Subscribe</button>
+            </div>
+        </div>
+    </form>
+</div>
