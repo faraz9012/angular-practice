@@ -26,8 +26,6 @@ export class SubscribersComponent {
 
   updateSubscriberInfo(){
     let updateItem = this.listService.listSubscribers[this.selectedIndex];
-    console.log('value: ', this.selectedIndex);
-    console.log(updateItem['name']);
 
     updateItem['name'] = this.NewSubscriberName;
     updateItem['email'] = this.NewSubscriberEmail;

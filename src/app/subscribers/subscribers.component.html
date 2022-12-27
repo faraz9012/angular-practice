@@ -11,9 +11,9 @@
                     {{ subscriber.email}}
                 </div>
                 <div>
-                    <button type="button" class="m-1 btn btn-danger" (click)="onDeleteSubscriber(i)">Delete</button>
                     <button type="button" class="m-1 btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal"
-                        (click)="onEditSubscriber(i)">Edit</button>
+                    (click)="onEditSubscriber(i)">Edit</button>
+                    <button type="button" class="m-1 btn btn-danger" (click)="onDeleteSubscriber(i)">Delete</button>
                 </div>
                 <!-- Modal -->
                 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel"
