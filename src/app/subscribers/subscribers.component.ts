@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild  } from '@angular/core';
 import { SubscribersListService } from '../subscribers-list.service';
 
 @Component({
@@ -7,11 +7,12 @@ import { SubscribersListService } from '../subscribers-list.service';
   styleUrls: ['./subscribers.component.css']
 })
 export class SubscribersComponent {
+  @ViewChild('editModalClose') editModal;
+
   selectedItem;
   selectedIndex;
   NewSubscriberName;
   NewSubscriberEmail;
-
   constructor (
     public listService: SubscribersListService
   ) {}
@@ -31,6 +32,7 @@ export class SubscribersComponent {
     updateItem['email'] = this.NewSubscriberEmail;
     this.NewSubscriberName = '';
     this.NewSubscriberEmail = '';
+    this.editModal.nativeElement.click();
   }
 }
 
