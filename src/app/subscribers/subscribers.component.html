@@ -23,7 +23,7 @@
                             <form>
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="editModalLabel">Edit Subscriber</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    <button type="button" #editModalClose class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -61,9 +61,9 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" #editModalClose class="btn btn-secondary"
+                                    <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary"
+                                    <button type="button" class="btn btn-primary" [disabled]="!NewSubscriberName && !NewSubscriberEmail"
                                     (click)="updateSubscriberInfo()">Save changes</button>
                                 </div>
                             </form>
