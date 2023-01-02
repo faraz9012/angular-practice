@@ -13,13 +13,17 @@ export class AuthenticateUserService {
     private route:Router
     ) { }
 
-  onLoginUser(name:string, password:string) {
-    if (name == this.currentUser.loginUsers[0].userName &&
-      password == this.currentUser.loginUsers[0].password) {
-      this.route.navigate(['/'])
+  onLoginUser(name, password) {
+    let authUser = this.currentUser.loginUsers.find(
+      element => element.userName == name && 
+      element.password == password
+    );
+
+    if (authUser) {
+      this.route.navigate(['/']);
     }
     else{
-      this.route.navigate(['/Login'])
+      this.route.navigate(['/Login']);
     }
   }
 }

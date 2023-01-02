@@ -9,5 +9,12 @@ export class LoginUsersListService {
   loginUsers: Ilogin[] =[{
     userName: 'admin',
     password:'123'
-  }]
+  },{
+    userName: 'admin2',
+    password:'1234'
+  },{
+    userName: 'admin3',
+    password:'abc'
+  }
+]
 }
