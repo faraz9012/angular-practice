@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { SubscribersComponent } from './subscribers/subscribers.component';
 import { LoginComponent } from './login/login.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     SubscribersComponent,
     LoginComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,

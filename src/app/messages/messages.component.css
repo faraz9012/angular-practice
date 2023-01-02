@@ -1,0 +1,12 @@
+/* MessagesComponent's private CSS styles */
+.message-body{
+    position: fixed;
+    width: 300px;
+    top: 4em;
+    right: 5px;
+    z-index: 99999;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(130 161 230 / 80%);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}

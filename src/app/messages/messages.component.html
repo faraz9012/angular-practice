@@ -1,0 +1,13 @@
+<div 
+*ngIf="toaster.messages.length" 
+class="message-body">
+    <div class="align-items-center">
+        <div class="d-flex">
+            <div class="toast-body" *ngFor='let message of toaster.messages'>
+                {{message}}
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" (click)="toaster.clear()"></button>
+        </div>
+    </div>
+</div>
+
