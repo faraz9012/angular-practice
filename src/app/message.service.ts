@@ -22,6 +22,8 @@ export class MessageService {
   }
 
   clear() {
-    this.messages = [];
+    setInterval(() => {
+      this.messages = [];
+    }, 3000);
   }
 }

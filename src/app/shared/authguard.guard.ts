@@ -14,10 +14,8 @@ export class AuthguardGuard implements CanActivate {
 
   canActivate(): boolean {
     if (!this.auth.IsLoggedIn()) {
-      console.log("Checking Authguard canActivate false condition.");
       this.route.navigateByUrl("/Login");
     }
-    console.log("Checking Authguard canActivate true condition.");
     return this.auth.IsLoggedIn();
   }
 
