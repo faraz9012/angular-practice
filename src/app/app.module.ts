@@ -23,7 +23,7 @@ import { MessagesComponent } from './messages/messages.component';
     HomeComponent,
     SubscribersComponent,
     LoginComponent,
-    MessagesComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

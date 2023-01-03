@@ -19,8 +19,9 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/Contact">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" routerLink="/Login"><i class="fa fa-user"></i></a>
+                <li class="nav-item" >
+                    <a class="nav-link text-dark" routerLink="/Login" *ngIf="!auth.IsLoggedIn()"><i class="fa fa-sign-in"></i></a>
+                    <a class="nav-link text-dark" *ngIf="auth.IsLoggedIn()" (click)="auth.LogOut()"><i class="fa fa-sign-out"></i></a>
                 </li>
             </ul>
         </div>
