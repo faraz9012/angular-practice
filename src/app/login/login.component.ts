@@ -8,6 +8,7 @@ import { AuthenticateUserService } from '../authenticate-user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  user ='1';
 constructor(private checkUser:AuthenticateUserService){
 
 }

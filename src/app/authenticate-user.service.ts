@@ -15,12 +15,14 @@ export class AuthenticateUserService {
   ) { }
 
   onLoginUser(name, password) {
+    let user ='1';
     let authUser = this.currentUser.loginUsers.find(
       element => element.userName == name &&
         element.password == password
     );
     if (authUser) {
       this.messageService.success("Welcome back " + name);
+      localStorage.setItem('token',user);
       this.route.navigate(['/']);
       setInterval(() => {
         this.messageService.clear();
