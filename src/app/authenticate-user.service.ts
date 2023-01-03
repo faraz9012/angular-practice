@@ -13,7 +13,14 @@ export class AuthenticateUserService {
     private route: Router,
     private messageService: MessageService
   ) { }
-
+  
+  IsLoggedIn(){
+    return !! localStorage.getItem('token');
+  }
+  LogOut(){
+    localStorage.removeItem('token');
+      this.route.navigate(['/Login']);
+  }
   onLoginUser(name, password) {
     let user ='1';
     let authUser = this.currentUser.loginUsers.find(
